@@ -1,0 +1,22 @@
+{
+  "name": "natural-language-demo",
+  "version": "1.0.0",
+  "description": "Natural Language Demo ==========",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davetheflashguy/natural-language-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davetheflashguy/natural-language-demo/issues"
+  },
+  "homepage": "https://github.com/davetheflashguy/natural-language-demo#readme",
+  "devDependencies": {
+    "nlp_compromise": "^6.5.0"
+  }
+}
