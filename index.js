@@ -2,17 +2,34 @@
 
 let nlp = require('nlp_compromise');
 
-log(nlp.noun('coder').pluralize());
-log('-------------------------------------');
-log(nlp.verb('code').conjugate());
-log('-------------------------------------');
-log(nlp.statement('He writes good code').negate().text());
-log('-------------------------------------');
-log(nlp.sentence('I fixed the tire').replace('the [Noun]', 'the code').text());
-log('-------------------------------------');
-log(nlp.text('Dave Collier did a dance').people());
-log('-------------------------------------');
-
 function log(str) {
   console.log(str);
 }
+
+function pluralize(noun) {
+  return nlp.noun(noun).pluralize();
+}
+
+function conjugate(verb) {
+  return nlp.verb(verb).conjugate();
+}
+
+function negate(statement) {
+  return nlp.statement(statement).negate().text();
+}
+
+function people(text) {
+  return nlp.text(text).people();
+}
+
+function init() {
+  log(pluralize('coder'));
+  log('-------------------------------------');
+  log(conjugate('code'));
+  log('-------------------------------------');
+  log(negate('Dave writes good code'));
+  log('-------------------------------------');
+  log(people('Dave did a funky dance'));
+}
+
+init(); // start

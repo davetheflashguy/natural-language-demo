@@ -10,13 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/davetheflashguy/natural-language-demo.git"
   },
-  "author": "",
+  "author": "davetheflashguy",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/davetheflashguy/natural-language-demo/issues"
   },
   "homepage": "https://github.com/davetheflashguy/natural-language-demo#readme",
   "devDependencies": {
-    "nlp_compromise": "^6.5.0"
+    "nlp_compromise": "^6.5.0",
+    "webpack": "^1.13.1"
   }
 }
