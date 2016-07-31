@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/davetheflashguy/natural-language-demo#readme",
   "devDependencies": {
+    "angular": "^1.5.8",
     "nlp_compromise": "^6.5.0",
     "webpack": "^1.13.1"
   }

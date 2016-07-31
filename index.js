@@ -1,6 +1,7 @@
 'use strict';
 
 let nlp = require('nlp_compromise');
+let angular = require('angular');
 
 function log(str) {
   console.log(str);
