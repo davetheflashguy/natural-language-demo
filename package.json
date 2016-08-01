@@ -18,7 +18,14 @@
   "homepage": "https://github.com/davetheflashguy/natural-language-demo#readme",
   "devDependencies": {
     "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-aria": "^1.5.8",
+    "angular-material": "^1.1.0-rc.5",
+    "bootstrap": "^3.3.7",
+    "css-loader": "^0.23.1",
+    "less-loader": "^2.2.3",
     "nlp_compromise": "^6.5.0",
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.1"
   }
 }

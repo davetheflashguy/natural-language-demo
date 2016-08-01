@@ -38,7 +38,7 @@ Thumbs.db
 
 # Application specific files
 ######################
-node_modules
+#node_modules
 build
 lib
 .publish
