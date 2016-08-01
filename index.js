@@ -2,8 +2,7 @@
 
 let nlp = require('nlp_compromise');
 let angular = require('angular');
-require('angular-material')
-require('./node_modules/angular-material/angular-material.css')
+require('angular-material');
 
 angular.module('nlpApp', ['ngMaterial'])
   .controller('AppController', function() {
