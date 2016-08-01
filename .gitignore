@@ -42,4 +42,4 @@ node_modules
 build
 lib
 .publish
-dist
+#dist

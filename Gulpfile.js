@@ -1,7 +1,19 @@
-var gulp = require('gulp');
-var webpack = require('gulp-webpack');
+const gulp = require('gulp');
+const webpack = require('gulp-webpack');
+const rename = require("gulp-rename");
+
 gulp.task('default', function() {
-  return gulp.src('./index.js')
+    // js
+    gulp.src('./src/app.js')
     .pipe(webpack())
-    .pipe(gulp.dest('dist/'));
+    .pipe(rename('app.min.js'))
+    .pipe(gulp.dest('./dist/'))
+
+    // css
+    gulp.src('./node_modules/angular-material/angular-material.css')
+    .pipe(gulp.dest('./dist/'))
+
+    // index.html
+    gulp.src('./src/index.html')
+    .pipe(gulp.dest('./dist/'));
 });

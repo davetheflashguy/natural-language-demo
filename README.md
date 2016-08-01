@@ -9,4 +9,6 @@ Derpin' around with Natural Language
 
 * git clone https://github.com/davetheflashguy/natural-language-demo.git
 * npm install
-* node index
+* gulp
+* cd dist
+* http-server

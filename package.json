@@ -22,6 +22,7 @@
     "angular-aria": "^1.5.8",
     "angular-material": "^1.1.0-rc.5",
     "css-loader": "^0.23.1",
+    "gulp-rename": "^1.2.2",
     "gulp-webpack": "^1.5.0",
     "less-loader": "^2.2.3",
     "nlp_compromise": "^6.5.0",
