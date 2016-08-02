@@ -14,31 +14,36 @@
             </h2>
           </div>
         </md-toolbar>
-        <md-content md-theme="docs-dark" layout-padding>
-            <!-- pluralize -->
-            <md-input-container class="md-block">
-              <label>Pluralize</label>
-              <input ng-model="user.input">
-            </md-input-container>
-            <md-input-container class="md-block">
-            <md-chips>
-              <md-chip>
-                <span>{{pluralize(user.input)}}</span>
-              </md-chip>
-            </md-chips>
-          </md-input-container>
-          
-          <!-- conjugate -->
-          <md-input-container class="md-block">
-              <label>Conjugate</label>
-              <input ng-model="user.boo">
-            </md-input-container>
-            <md-chips>
-              <md-chip ng-repeat="(property, value) in conjugate(user.boo)">
-                <span><b>{{property}}</b> : {{value}}</span>
-              </md-chip>
-            </md-chips>
-        </md-content>
+        <md-tabs md-dynamic-height md-border-bottom>
+          <md-tab label="pluralize">
+            <md-content class="md-padding">
+              <md-input-container class="md-block">
+                <label>Pluralize</label>
+                <input ng-model="user.input">
+              </md-input-container>
+              <md-input-container class="md-block">
+                <md-chips>
+                  <md-chip>
+                    <span>{{pluralize(user.input)}}</span>
+                  </md-chip>
+                </md-chips>
+              </md-input-container>
+            </md-content>
+          </md-tab>
+          <md-tab label="conjugate">
+            <md-content class="md-padding">
+              <md-input-container class="md-block">
+                <label>Conjugate</label>
+                <input ng-model="user.boo">
+              </md-input-container>
+              <md-chips>
+                <md-chip ng-repeat="(property, value) in conjugate(user.boo)">
+                  <span><b>{{property}}</b> : {{value}}</span>
+                </md-chip>
+              </md-chips>
+            </md-content>
+          </md-tab>
+        </md-tabs>
       </md-content>
     </div>
   </body>
