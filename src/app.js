@@ -11,11 +11,11 @@ angular.module('nlpApp', ['ngMaterial'])
     }
 
     $scope.pluralize = function(noun) {
-      return (typeof(noun) !== 'undefined') ? nlp.noun(noun).pluralize() : '';
+      return (typeof noun !== 'undefined') ? nlp.noun(noun).pluralize() : '';
     }
 
-    function conjugate(verb) {
-      return nlp.verb(verb).conjugate();
+    $scope.conjugate = function(verb) {
+      return (typeof verb !== 'undefined') ? nlp.verb(verb).conjugate() : '';
     }
 
     function negate(statement) {

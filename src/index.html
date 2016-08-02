@@ -14,14 +14,30 @@
             </h2>
           </div>
         </md-toolbar>
-        <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
-            <md-input-container>
-              <label>pluralize</label>
+        <md-content md-theme="docs-dark" layout-padding>
+            <!-- pluralize -->
+            <md-input-container class="md-block">
+              <label>Pluralize</label>
               <input ng-model="user.input">
             </md-input-container>
-            <div>
-              <h1>Output: {{pluralize(user.input)}}</h1>
-            </div>
+            <md-input-container class="md-block">
+            <md-chips>
+              <md-chip>
+                <span>{{pluralize(user.input)}}</span>
+              </md-chip>
+            </md-chips>
+          </md-input-container>
+          
+          <!-- conjugate -->
+          <md-input-container class="md-block">
+              <label>Conjugate</label>
+              <input ng-model="user.boo">
+            </md-input-container>
+            <md-chips>
+              <md-chip ng-repeat="(property, value) in conjugate(user.boo)">
+                <span><b>{{property}}</b> : {{value}}</span>
+              </md-chip>
+            </md-chips>
         </md-content>
       </md-content>
     </div>
