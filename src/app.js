@@ -1,17 +1,17 @@
 'use strict';
 
-let nlp = require('nlp_compromise');
-let angular = require('angular');
+var nlp = require('nlp_compromise');
+var angular = require('angular');
 require('angular-material');
 
 angular.module('nlpApp', ['ngMaterial'])
-  .controller('AppController', function($scope) {
+  .controller('AppController', ['$scope', function($scope) {
     function log(str) {
       console.log(str);
     }
 
     $scope.pluralize = function(noun) {
-      return (typeOf(noun) !== 'undefined') ? nlp.noun(noun).pluralize() : '';
+      return (typeof(noun) !== 'undefined') ? nlp.noun(noun).pluralize() : '';
     }
 
     function conjugate(verb) {
@@ -36,4 +36,4 @@ angular.module('nlpApp', ['ngMaterial'])
       log(people('Dave did a funky dance'));
     }
 
-  });
+  }]);
