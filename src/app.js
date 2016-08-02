@@ -5,12 +5,12 @@ let angular = require('angular');
 require('angular-material');
 
 angular.module('nlpApp', ['ngMaterial'])
-  .controller('AppController', function() {
+  .controller('AppController', function($scope) {
     function log(str) {
       console.log(str);
     }
 
-    function pluralize(noun) {
+    $scope.pluralize = function(noun) {
       return nlp.noun(noun).pluralize();
     }
 
@@ -36,5 +36,4 @@ angular.module('nlpApp', ['ngMaterial'])
       log(people('Dave did a funky dance'));
     }
 
-    init(); // start
   });
