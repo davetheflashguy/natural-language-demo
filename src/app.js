@@ -11,7 +11,7 @@ angular.module('nlpApp', ['ngMaterial'])
     }
 
     $scope.pluralize = function(noun) {
-      return nlp.noun(noun).pluralize();
+      return (typeOf(noun) !== 'undefined') ? nlp.noun(noun).pluralize() : '';
     }
 
     function conjugate(verb) {
