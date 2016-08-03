@@ -6,34 +6,51 @@ require('angular-material');
 
 angular.module('nlpApp', ['ngMaterial'])
   .controller('AppController', ['$scope', function($scope) {
-    function log(str) {
-      console.log(str);
+    $scope.verb = {
+      conjugate: {},
+      past : null,
+      present : null,
+      to_future : null
+    };
+
+    $scope.results = {
+      conjugate: {},
+      past : null,
+      present : null,
+      to_future : null
+    };
+
+    $scope.$watch('verb', function(newVal, oldVal){
+      if ($scope.verb.conjugate == true) {
+        $scope.results.conjugate = conjugate();
+      }
+      if ($scope.verb.to_past == true) {
+        $scope.results.past = toPast();
+      }
+      if ($scope.verb.to_present == true) {
+        $scope.results.present = toPresent();
+      }
+      if ($scope.verb.to_future == true) {
+        $scope.results.future = toFuture();
+      }
+      console.log('verb: ', $scope.verb);
+      console.log('results: ', $scope.results);
+    }, true);
+
+    function conjugate () {
+        return nlp.verb($scope.verb.input).conjugate();
     }
 
-    $scope.pluralize = function(noun) {
-      return (typeof noun !== 'undefined') ? nlp.noun(noun).pluralize() : '';
+    function toPast () {
+        return nlp.verb($scope.verb.input).to_past();
     }
 
-    $scope.conjugate = function(verb) {
-      return (typeof verb !== 'undefined') ? nlp.verb(verb).conjugate() : '';
+    function toPresent () {
+        return nlp.verb($scope.verb.input).to_present();
     }
 
-    function negate(statement) {
-      return nlp.statement(statement).negate().text();
-    }
-
-    function people(text) {
-      return nlp.text(text).people();
-    }
-
-    function init() {
-      log(pluralize('coder'));
-      log('-------------------------------------');
-      log(conjugate('code'));
-      log('-------------------------------------');
-      log(negate('Dave writes good code'));
-      log('-------------------------------------');
-      log(people('Dave did a funky dance'));
+    function toFuture () {
+        return nlp.verb($scope.verb.input).to_future();
     }
 
   }]);

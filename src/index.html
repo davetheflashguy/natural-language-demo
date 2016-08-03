@@ -15,6 +15,35 @@
           </div>
         </md-toolbar>
         <md-tabs md-dynamic-height md-border-bottom>
+          <md-tab label="verb">
+            <md-content class="md-padding">
+              <md-input-container class="md-block">
+                <label>Input</label>
+                <input ng-model="verb.input">
+              </md-input-container>
+              <div>
+                <fieldset class="standard">
+                  <legend>Using "verb"</legend>
+                  <div class="form" ng-submit="onSubmit()">
+                    <div layout="column" layout-wrap layout-gt-sm="row" >
+                      <md-checkbox ng-model="verb.conjugate" aria-label="Conjugate">
+                        Conjugate
+                      </md-checkbox>
+                      <md-checkbox ng-model="verb.to_past" aria-label="To Past">
+                        To Past
+                      </md-checkbox>
+                      <md-checkbox ng-model="verb.to_present" aria-label="To Present">
+                        To Present
+                      </md-checkbox>
+                      <md-checkbox ng-model="verb.to_future" aria-label="To Future">
+                        To Future
+                      </md-checkbox>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </md-content>
+          </md-tab>
           <md-tab label="pluralize">
             <md-content class="md-padding">
               <md-input-container class="md-block">
